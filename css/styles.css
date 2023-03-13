@@ -727,41 +727,34 @@ a {
 
 /*------------------Productos de protafolio--------------------------------*/
 .products-portfolio{
+    flex-basis: calc((100% - 60px) / 3);
+    cursor: pointer;
     display: flex;
     flex-wrap: wrap;
     gap: 26px; 
+    list-style: none;
 }
-.product1{
-    flex-basis: calc((100% - 60px) / 3);
-    cursor: pointer;
-   
-   
-}
-.product1:hover .presentation-product,
-.product1:focus .presentation-product{
-    transform: translatey(0);
+.product{
     border: 1px solid #EEEEEE;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-    border-radius: 4px;
-    
+    border-radius: 4px; 
+}
+.product:hover .presentation-product{
+    transform: translateY(0%);
 }
 .text-product{
     position: relative;
-    width: 370px;
-    height: 293px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #bdbdbd;
     overflow: hidden;
 }
 .presentation-product{
     position: absolute;
     top: 0;
     left: 0;
-    width: 370px;
-    height: 293px;
+    width: 100%;
+    height: 100%;
     background-color: var(--background-color-secundary);
-    transform: translatey(100%);
+    overflow: auto;
+    transform: translatey(101%);
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier( 0.4, 0, 0.2, 1);
     transition-delay: 0;
@@ -775,6 +768,7 @@ a {
     text-align: center;
     align-items: center;
 }
+
 .title-h3{
     font-size: 18px;
     width: 322px;
