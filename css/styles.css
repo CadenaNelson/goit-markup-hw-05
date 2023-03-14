@@ -360,8 +360,8 @@ a {
 .modal{
     position: absolute;
     color: var(--color-texto-principal);
-    width: 600px;
-    height: 600px;
+    width: 528px;
+    height: 581px;
     background-color: var(--color-texto-terceario);
     border-radius: 4px;
     top: 50%;
