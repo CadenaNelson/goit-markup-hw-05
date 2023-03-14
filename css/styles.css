@@ -104,22 +104,18 @@ a {
 .link-study::after{
     content:"";
     position: absolute;
-    bottom: -1px;
+    bottom: -3px;
     left: 0;
     width: 100%;
-    height: .1px;
     background-color: var(--color-texto-secundario);
-    transition-property:background-color;
+    transition-property:var(--background-color-principal);
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier( 0.4, 0, 0.2, 1);
     transition-delay: 0;
-    }
-.link-study:hover::after{
     height: 4px;
     color: var(--color-texto-secundario);
     border-radius: 2px;
-   
-}
+    }
 .link-portfolio{
     color: var(--color-texto-secundario);
     font-family: "Roboto";
@@ -148,16 +144,12 @@ a {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 1px;
     background-color: var(--color-texto-secundario);
     border-radius: 2px;
-    }
-.link-portfolio:hover::after{
     height: 4px;
     color: var(--color-texto-secundario);
-    transition-duration: 500ms;
-    transition-timing-function: cubic-bezier( 0.4, 0, 0.2, 1);
-}
+    }
+
 .link{
     color: var(--color-texto-principal);
     font-family: "Roboto";
@@ -352,8 +344,13 @@ a {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
+    transition-property:var(--color-texto-terceario);
+    transition-duration: 250ms;
+    transition-timing-function: 
+    cubic-bezier( 0.4, 0, 0.2, 1);
+    transition-delay: 0;
+    cursor: pointer;
 }
 .is-hidden{
     visibility: hidden;
@@ -363,15 +360,32 @@ a {
 .modal{
     position: absolute;
     color: var(--color-texto-principal);
-    width: 528px;
-    height: 581px;
+    width: 600px;
+    height: 600px;
     background-color: var(--color-texto-terceario);
     border-radius: 4px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+    0px 1px 1px rgba(0, 0, 0, 0.14), 
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
     }
-   
+.icon-close{
+    fill: #000000;
+}
+.but-close{
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    margin:0;
+    width: 30px;
+    height: 30px ;
+    border-radius: 50%;
+    border: 1px solid var(--color-texto-terceario);
+}
+
 /*-------Sección de beneficios y servicios--------------------------------*/
 
 .icons-benefist{
@@ -390,7 +404,7 @@ a {
     text-align: center;
     align-items: center;
     line-height: 1.14;
-    padding-top: 30px;
+    margin-top: 30px;
 }
 .paragraph{
     color: #757575;
@@ -434,8 +448,8 @@ a {
 }
 .text-imag{
     position: absolute;
-    top: 252px;
     width: 100%;
+    bottom: 0;
 } 
 .paragraph-serv{
     color: var(--color-texto-terceario);
@@ -458,6 +472,7 @@ a {
     gap: 30px;  
 }
 .person-rol{
+    background-color: #FFFFFF;
     border-radius: 4px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
@@ -488,19 +503,24 @@ a {
     text-align: center;
     align-items: center;
     line-height: 1.87;
-    transition-property: background-color;
+    transition-property: var(--color-texto-secundario);
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier( 0.4, 0, 0.2, 1);
     transition-delay: 0;
 }
-.team-contact-link:hover { 
+.team-contact-link:hover,
+.team-contact-link.link:focus { 
     background-color: var(--color-texto-secundario);
 }
 .team-contact-icon{
     fill: #AFB1B8;
-   
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier( 0.4, 0, 0.2, 1);
+    transition-delay: 0;
     }
-.team-contact-icon:hover{
+.team-contact-icon:hover,
+.team-contact-icon:focus{
     fill: var(--color-texto-terceario);
     cursor: pointer;   
 } 
@@ -513,11 +533,13 @@ a {
     gap:30px;
     padding: 0;
 }
-.bord-icons:hover .icon-group{
+.bord-icons:hover .icon-group,
+.bord-icons:focus .icon-group{
     fill:var(--color-texto-secundario);
     cursor: pointer;
 }
-.bord-icons:hover{
+.bord-icons:hover,
+.bord-icons:focus{
     border:1px solid var(--color-texto-secundario);  
 }
 .bord-icons{
@@ -587,7 +609,6 @@ a {
 .footer-number-contact:focus{
     color: var(--color-texto-secundario);
     
-    
     /*--------flex footer----------*/
 }
 .footer{
@@ -640,10 +661,8 @@ a {
         background-color: var(--background-color-principal);
         text-align: center;
         align-items: center;
-        line-height: 1.87;
-        
+        line-height: 1.87;  
 }
-
 /*--------------------PÁGINA DE PORTAFOLIO------------------------*/
 .title-h3{
     color:var(--color-texto-principal);
